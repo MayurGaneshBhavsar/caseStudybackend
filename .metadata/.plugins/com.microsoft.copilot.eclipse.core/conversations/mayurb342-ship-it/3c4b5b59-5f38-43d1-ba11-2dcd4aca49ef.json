@@ -1,0 +1,194 @@
+{
+  "conversationId": "3c4b5b59-5f38-43d1-ba11-2dcd4aca49ef",
+  "title": "tools.jackson.databind.exc.MismatchedInputExceptio...",
+  "requesterUsername": "mayurb342-ship-it",
+  "responderUsername": "GitHub Copilot",
+  "turns": [
+    {
+      "message": {
+        "text": "tools.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.library.borrow.client.BookResponse` from Array value (token `JsonToken.START_ARRAY`)\r\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #0]\r\n\tat tools.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1863) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1659) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1608) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:944) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeOther(BeanDeserializer.java:226) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:202) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:266) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1888) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1270) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:112) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.cloud.openfeign.support.SpringDecoder.decode(SpringDecoder.java:58) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat org.springframework.cloud.openfeign.support.ResponseEntityDecoder.decode(ResponseEntityDecoder.java:62) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat feign.optionals.OptionalDecoder.decode(OptionalDecoder.java:38) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.decode(InvocationContext.java:121) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.proceed(InvocationContext.java:94) ~[feign-core-13.6.jar:na]\r\n\tat feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]\r\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]\r\n\tat jdk.proxy4/jdk.proxy4.$Proxy140.getBookByTitle(Unknown Source) ~[na:na]\r\n\tat com.library.borrow.service.BorrowService.issue(BorrowService.java:57) ~[classes/:na]\r\n\tat com.library.borrow.controller.BorrowController.issue(BorrowController.java:25) ~[classes/:na]\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.18.jar:11.0.18]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]"
+      },
+      "currentDocument": {
+        "uri": "/borrow-service/src/main/java/com/library/borrow/service/BorrowService.java"
+      },
+      "references": [],
+      "ignoredSkills": [],
+      "userLanguage": "en",
+      "source": "panel",
+      "model": "Auto",
+      "chatMode": "Agent",
+      "customChatModeId": "Agent",
+      "needToolCallConfirmation": true,
+      "turnId": "3e98bc6a-cdf8-4daa-b576-ebe86a9741e5",
+      "role": "user",
+      "timestamp": "2026-03-27T10:49:26.367313300Z"
+    },
+    {
+      "reply": {
+        "annotations": [],
+        "references": [],
+        "hideText": false,
+        "notifications": [],
+        "followups": [],
+        "errorMessages": [
+          {
+            "error": {
+              "message": "Oops, the model is not supported. Please try again.",
+              "code": 400
+            }
+          }
+        ],
+        "editAgentRounds": [],
+        "panelMessages": [],
+        "steps": [],
+        "agentMessages": [],
+        "data": {},
+        "modelName": "Claude Haiku 4.5",
+        "billingMultiplier": 1.0
+      },
+      "turnId": "c7bf4593-7214-478e-af52-2323ec3c607b",
+      "role": "copilot",
+      "timestamp": "2026-03-27T10:49:27.422058500Z"
+    },
+    {
+      "message": {
+        "text": "tools.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.library.borrow.client.BookResponse` from Array value (token `JsonToken.START_ARRAY`)\r\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #0]\r\n\tat tools.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1863) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1659) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1608) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:944) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeOther(BeanDeserializer.java:226) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:202) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:266) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1888) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1270) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:112) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.cloud.openfeign.support.SpringDecoder.decode(SpringDecoder.java:58) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat org.springframework.cloud.openfeign.support.ResponseEntityDecoder.decode(ResponseEntityDecoder.java:62) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat feign.optionals.OptionalDecoder.decode(OptionalDecoder.java:38) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.decode(InvocationContext.java:121) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.proceed(InvocationContext.java:94) ~[feign-core-13.6.jar:na]\r\n\tat feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]\r\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]\r\n\tat jdk.proxy4/jdk.proxy4.$Proxy140.getBookByTitle(Unknown Source) ~[na:na]\r\n\tat com.library.borrow.service.BorrowService.issue(BorrowService.java:57) ~[classes/:na]\r\n\tat com.library.borrow.controller.BorrowController.issue(BorrowController.java:25) ~[classes/:na]\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.18.jar:11.0.18]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]"
+      },
+      "currentDocument": {
+        "uri": "/borrow-service/src/main/java/com/library/borrow/service/BorrowService.java"
+      },
+      "references": [],
+      "ignoredSkills": [],
+      "userLanguage": "en",
+      "source": "panel",
+      "model": "Auto",
+      "chatMode": "Agent",
+      "customChatModeId": "Agent",
+      "needToolCallConfirmation": true,
+      "turnId": "193104b8-1cef-4604-85c0-e88aa14079c8",
+      "role": "user",
+      "timestamp": "2026-03-27T10:50:29.955685Z"
+    },
+    {
+      "reply": {
+        "annotations": [],
+        "references": [],
+        "hideText": false,
+        "notifications": [],
+        "followups": [],
+        "errorMessages": [
+          {
+            "error": {
+              "message": "Oops, the model is not supported. Please try again.",
+              "code": 400
+            }
+          }
+        ],
+        "editAgentRounds": [],
+        "panelMessages": [],
+        "steps": [],
+        "agentMessages": [],
+        "data": {},
+        "modelName": "Claude Haiku 4.5",
+        "billingMultiplier": 1.0
+      },
+      "turnId": "d38f77c7-940d-4b17-9702-20bcb3c867e5",
+      "role": "copilot",
+      "timestamp": "2026-03-27T10:50:30.406896400Z"
+    },
+    {
+      "message": {
+        "text": "tools.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.library.borrow.client.BookResponse` from Array value (token `JsonToken.START_ARRAY`)\r\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #0]\r\n\tat tools.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1863) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1659) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1608) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:944) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeOther(BeanDeserializer.java:226) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:202) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:266) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1888) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1270) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:112) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.cloud.openfeign.support.SpringDecoder.decode(SpringDecoder.java:58) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat org.springframework.cloud.openfeign.support.ResponseEntityDecoder.decode(ResponseEntityDecoder.java:62) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat feign.optionals.OptionalDecoder.decode(OptionalDecoder.java:38) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.decode(InvocationContext.java:121) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.proceed(InvocationContext.java:94) ~[feign-core-13.6.jar:na]\r\n\tat feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]\r\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]\r\n\tat jdk.proxy4/jdk.proxy4.$Proxy140.getBookByTitle(Unknown Source) ~[na:na]\r\n\tat com.library.borrow.service.BorrowService.issue(BorrowService.java:57) ~[classes/:na]\r\n\tat com.library.borrow.controller.BorrowController.issue(BorrowController.java:25) ~[classes/:na]\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.18.jar:11.0.18]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]"
+      },
+      "currentDocument": {
+        "uri": "/borrow-service/src/main/java/com/library/borrow/service/BorrowService.java"
+      },
+      "references": [],
+      "ignoredSkills": [],
+      "userLanguage": "en",
+      "source": "panel",
+      "model": "Auto",
+      "chatMode": "Agent",
+      "customChatModeId": "Agent",
+      "needToolCallConfirmation": true,
+      "turnId": "5d440fcf-8e46-433a-9916-fde43e02384a",
+      "role": "user",
+      "timestamp": "2026-03-27T10:51:23.569062300Z"
+    },
+    {
+      "reply": {
+        "annotations": [],
+        "references": [],
+        "hideText": false,
+        "notifications": [],
+        "followups": [],
+        "errorMessages": [
+          {
+            "error": {
+              "message": "Oops, the model is not supported. Please try again.",
+              "code": 400
+            }
+          }
+        ],
+        "editAgentRounds": [],
+        "panelMessages": [],
+        "steps": [],
+        "agentMessages": [],
+        "data": {},
+        "modelName": "Claude Haiku 4.5",
+        "billingMultiplier": 1.0
+      },
+      "turnId": "c12ac304-a4b6-4561-a9c1-b01314263ffc",
+      "role": "copilot",
+      "timestamp": "2026-03-27T10:51:24.046949400Z"
+    },
+    {
+      "message": {
+        "text": "tools.jackson.databind.exc.MismatchedInputException: Cannot deserialize value of type `com.library.borrow.client.BookResponse` from Array value (token `JsonToken.START_ARRAY`)\r\n at [Source: REDACTED (`StreamReadFeature.INCLUDE_SOURCE_IN_LOCATION` disabled); byte offset: #0]\r\n\tat tools.jackson.databind.exc.MismatchedInputException.from(MismatchedInputException.java:63) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.reportInputMismatch(DeserializationContext.java:1863) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1659) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.DeserializationContext.handleUnexpectedToken(DeserializationContext.java:1608) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeFromArray(BeanDeserializer.java:944) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer._deserializeOther(BeanDeserializer.java:226) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.bean.BeanDeserializer.deserialize(BeanDeserializer.java:202) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.deser.DeserializationContextExt.readRootValue(DeserializationContextExt.java:266) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:1888) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat tools.jackson.databind.ObjectReader.readValue(ObjectReader.java:1270) ~[jackson-databind-3.1.0.jar:3.1.0]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.readJavaType(AbstractJacksonHttpMessageConverter.java:352) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.http.converter.AbstractJacksonHttpMessageConverter.read(AbstractJacksonHttpMessageConverter.java:319) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.client.HttpMessageConverterExtractor.extractData(HttpMessageConverterExtractor.java:112) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.cloud.openfeign.support.SpringDecoder.decode(SpringDecoder.java:58) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat org.springframework.cloud.openfeign.support.ResponseEntityDecoder.decode(ResponseEntityDecoder.java:62) ~[spring-cloud-openfeign-core-5.0.1.jar:5.0.1]\r\n\tat feign.optionals.OptionalDecoder.decode(OptionalDecoder.java:38) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.decode(InvocationContext.java:121) ~[feign-core-13.6.jar:na]\r\n\tat feign.InvocationContext.proceed(InvocationContext.java:94) ~[feign-core-13.6.jar:na]\r\n\tat feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]\r\n\tat feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]\r\n\tat feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]\r\n\tat jdk.proxy4/jdk.proxy4.$Proxy140.getBookByTitle(Unknown Source) ~[na:na]\r\n\tat com.library.borrow.service.BorrowService.issue(BorrowService.java:57) ~[classes/:na]\r\n\tat com.library.borrow.controller.BorrowController.issue(BorrowController.java:25) ~[classes/:na]\r\n\tat java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104) ~[na:na]\r\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:565) ~[na:na]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874) ~[spring-webmvc-7.0.6.jar:7.0.6]\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710) ~[tomcat-embed-core-11.0.18.jar:6.1]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-11.0.18.jar:11.0.18]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107) ~[tomcat-embed-core-11.0.18.jar:11.0.18]\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199) ~[spring-web-7.0.6.jar:7.0.6]\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-7.0.6.jar:7.0.6]"
+      },
+      "currentDocument": {
+        "uri": "/borrow-service/src/main/java/com/library/borrow/service/BorrowService.java"
+      },
+      "references": [],
+      "ignoredSkills": [],
+      "userLanguage": "en",
+      "source": "panel",
+      "model": "GPT-5 mini",
+      "chatMode": "Agent",
+      "customChatModeId": "Agent",
+      "needToolCallConfirmation": true,
+      "turnId": "00fc5a96-e462-4006-9742-f7c792d04c88",
+      "role": "user",
+      "timestamp": "2026-03-27T10:51:51.248383700Z"
+    },
+    {
+      "reply": {
+        "annotations": [],
+        "references": [],
+        "hideText": false,
+        "notifications": [],
+        "followups": [],
+        "errorMessages": [
+          {
+            "error": {
+              "message": "Oops, the model is not supported. Please try again.",
+              "code": 400
+            }
+          }
+        ],
+        "editAgentRounds": [],
+        "panelMessages": [],
+        "steps": [],
+        "agentMessages": [],
+        "data": {},
+        "modelName": "GPT-5 mini",
+        "billingMultiplier": 1.0
+      },
+      "turnId": "f39d7506-ee6e-47ab-a6f0-9941892defa5",
+      "role": "copilot",
+      "timestamp": "2026-03-27T10:51:51.787369Z"
+    }
+  ],
+  "creationDate": "2026-03-27T10:49:26.323680Z",
+  "lastMessageDate": "2026-03-27T10:51:53.070311300Z"
+}

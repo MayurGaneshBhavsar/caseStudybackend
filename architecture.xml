@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel>
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <!-- Title -->
+    <mxCell id="2" value="Library Management System - Microservice Architecture"
+      style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="100" y="20" width="700" height="40" as="geometry"/>
+    </mxCell>
+
+    <!-- Client -->
+    <mxCell id="3" value="Client&#xa;Postman / Browser"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="350" y="80" width="160" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- API Gateway -->
+    <mxCell id="4" value="API Gateway&#xa;:8080&#xa;JWT Auth Filter"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="330" y="200" width="200" height="70" as="geometry"/>
+    </mxCell>
+
+    <!-- Eureka Server -->
+    <mxCell id="5" value="Eureka Server&#xa;:8761&#xa;Service Registry"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="680" y="200" width="160" height="70" as="geometry"/>
+    </mxCell>
+
+    <!-- Auth Service -->
+    <mxCell id="6" value="Auth Service&#xa;:8081"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="60" y="370" width="140" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- Book Service -->
+    <mxCell id="7" value="Book Service&#xa;:8082"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="240" y="370" width="140" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- Member Service -->
+    <mxCell id="8" value="Member Service&#xa;:8083"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="420" y="370" width="140" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- Borrow Service -->
+    <mxCell id="9" value="Borrow Service&#xa;:8084"
+      style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;"
+      vertex="1" parent="1">
+      <mxGeometry x="600" y="370" width="140" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- auth_db -->
+    <mxCell id="10" value="auth_db&#xa;users_table"
+      style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;"
+      vertex="1" parent="1">
+      <mxGeometry x="70" y="500" width="120" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- book_db -->
+    <mxCell id="11" value="book_db&#xa;books"
+      style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;"
+      vertex="1" parent="1">
+      <mxGeometry x="250" y="500" width="120" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- member_db -->
+    <mxCell id="12" value="member_db&#xa;members"
+      style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;"
+      vertex="1" parent="1">
+      <mxGeometry x="430" y="500" width="120" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- borrow_db -->
+    <mxCell id="13" value="borrow_db&#xa;borrows / fine"
+      style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;"
+      vertex="1" parent="1">
+      <mxGeometry x="610" y="500" width="120" height="60" as="geometry"/>
+    </mxCell>
+
+    <!-- Client to Gateway -->
+    <mxCell id="14" value="HTTP + Bearer Token"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;fontStyle=2;fontSize=10;"
+      edge="1" source="3" target="4" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gateway to Auth -->
+    <mxCell id="15" value="/auth/**"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;fontSize=10;fontStyle=2;"
+      edge="1" source="4" target="6" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gateway to Book -->
+    <mxCell id="16" value="/books/**"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;fontSize=10;fontStyle=2;"
+      edge="1" source="4" target="7" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gateway to Member -->
+    <mxCell id="17" value="/members/**"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;fontSize=10;fontStyle=2;"
+      edge="1" source="4" target="8" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gateway to Borrow -->
+    <mxCell id="18" value="/borrows/**"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#333333;fontSize=10;fontStyle=2;"
+      edge="1" source="4" target="9" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Gateway to Eureka -->
+    <mxCell id="19" value="discover"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;fontStyle=2;"
+      edge="1" source="4" target="5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Auth to Eureka -->
+    <mxCell id="20" value="register"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;"
+      edge="1" source="6" target="5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Book to Eureka -->
+    <mxCell id="21" value="register"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;"
+      edge="1" source="7" target="5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Member to Eureka -->
+    <mxCell id="22" value="register"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;"
+      edge="1" source="8" target="5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Borrow to Eureka -->
+    <mxCell id="23" value="register"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#9673a6;fontSize=10;"
+      edge="1" source="9" target="5" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Auth to auth_db -->
+    <mxCell id="24" value=""
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;"
+      edge="1" source="6" target="10" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Book to book_db -->
+    <mxCell id="25" value=""
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;"
+      edge="1" source="7" target="11" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Member to member_db -->
+    <mxCell id="26" value=""
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;"
+      edge="1" source="8" target="12" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Borrow to borrow_db -->
+    <mxCell id="27" value=""
+      style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;"
+      edge="1" source="9" target="13" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Feign: Member to Auth -->
+    <mxCell id="28" value="Feign: verify user"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#FF0000;fontColor=#FF0000;fontSize=10;fontStyle=2;"
+      edge="1" source="8" target="6" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Feign: Borrow to Member -->
+    <mxCell id="29" value="Feign: get member"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#FF0000;fontColor=#FF0000;fontSize=10;fontStyle=2;"
+      edge="1" source="9" target="8" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+    <!-- Feign: Borrow to Book -->
+    <mxCell id="30" value="Feign: get book / update copies"
+      style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;strokeColor=#FF0000;fontColor=#FF0000;fontSize=10;fontStyle=2;"
+      edge="1" source="9" target="7" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

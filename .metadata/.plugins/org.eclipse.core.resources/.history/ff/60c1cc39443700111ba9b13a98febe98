@@ -1,0 +1,144 @@
+package com.library.auth;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.*;
+import static org.mockito.Mockito.*;
+
+import java.util.Optional;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
+
+import com.library.auth.DTO.AuthResponse;
+import com.library.auth.DTO.UserLogin;
+import com.library.auth.DTO.UserRegister;
+import com.library.auth.model.User;
+import com.library.auth.repo.UserRepo;
+import com.library.auth.security.JwtUtil;
+import com.library.auth.service.AuthService;
+
+@ExtendWith(MockitoExtension.class)
+class AuthServiceTest {
+
+    @Mock private UserRepo userRepo;
+    @Mock private JwtUtil jwtUtil;
+    @Mock private PasswordEncoder passwordEncoder;
+
+    @InjectMocks
+    private AuthService authService;
+
+    private UserRegister userRegister;
+    private UserLogin userLogin;
+    private User existingUser;
+
+    @BeforeEach
+    void setUp() {
+        userRegister = new UserRegister();
+        setField(userRegister, "firstName", "John");
+        setField(userRegister, "lastName", "Doe");
+        setField(userRegister, "mobNo", "9876543210");
+        setField(userRegister, "email", "john@example.com");
+        setField(userRegister, "addr", "123 Main St");
+        setField(userRegister, "password", "secret");
+
+        userLogin = new UserLogin();
+        setField(userLogin, "userName", "john9876");
+        setField(userLogin, "password", "secret");
+
+        existingUser = new User();
+        existingUser.setId("LIB001");
+        existingUser.setFirstName("John");
+        existingUser.setUserName("john9876");
+        existingUser.setPassword("encodedSecret");
+        existingUser.setRole("USER");
+    }
+
+    // --- register ---
+
+    @Test
+    void register_success() {
+        when(userRepo.count()).thenReturn(0L);
+        when(userRepo.findByUserName(anyString())).thenReturn(Optional.empty());
+        when(passwordEncoder.encode("secret")).thenReturn("encodedSecret");
+
+        AuthResponse response = authService.register(userRegister);
+
+        assertEquals("User Registered Successfully!!", response.getMessage());
+        assertTrue(response.getUserName().contains("john"));
+        verify(userRepo).save(any(User.class));
+    }
+
+    @Test
+    void register_usernameCollision_incrementsCount() {
+        when(userRepo.count()).thenReturn(0L);
+        // first call collides, second is free
+        when(userRepo.findByUserName("john9876")).thenReturn(Optional.of(existingUser));
+        when(userRepo.findByUserName("john9877")).thenReturn(Optional.empty());
+        when(passwordEncoder.encode("secret")).thenReturn("encodedSecret");
+
+        AuthResponse response = authService.register(userRegister);
+
+        assertTrue(response.getUserName().contains("john9877"));
+    }
+
+    // --- login ---
+
+    @Test
+    void login_success() {
+        when(userRepo.findByUserName("john9876")).thenReturn(Optional.of(existingUser));
+        when(passwordEncoder.matches("secret", "encodedSecret")).thenReturn(true);
+        when(jwtUtil.generateToken("john9876", "USER")).thenReturn("jwt-token");
+
+        AuthResponse response = authService.login(userLogin);
+
+        assertEquals("Login Successfully!!", response.getMessage());
+        assertEquals("jwt-token", response.getToken());
+    }
+
+    @Test
+    void login_invalidUsername_throwsException() {
+        when(userRepo.findByUserName("john9876")).thenReturn(Optional.empty());
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () -> authService.login(userLogin));
+        assertEquals("Invalid Username", ex.getMessage());
+    }
+
+    @Test
+    void login_invalidPassword_throwsException() {
+        when(userRepo.findByUserName("john9876")).thenReturn(Optional.of(existingUser));
+        when(passwordEncoder.matches("secret", "encodedSecret")).thenReturn(false);
+
+        RuntimeException ex = assertThrows(RuntimeException.class, () -> authService.login(userLogin));
+        assertEquals("Invalid Password", ex.getMessage());
+    }
+
+    // --- userExists ---
+
+    @Test
+    void userExists_returnsTrue() {
+        when(userRepo.existsById("LIB001")).thenReturn(true);
+        assertTrue(authService.userExists("LIB001"));
+    }
+
+    @Test
+    void userExists_returnsFalse() {
+        when(userRepo.existsById("LIB999")).thenReturn(false);
+        assertFalse(authService.userExists("LIB999"));
+    }
+
+    // helper to set private fields via reflection
+    private void setField(Object target, String fieldName, String value) {
+        try {
+            var field = target.getClass().getDeclaredField(fieldName);
+            field.setAccessible(true);
+            field.set(target, value);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
