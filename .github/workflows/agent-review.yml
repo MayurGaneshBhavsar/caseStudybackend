@@ -17,9 +17,9 @@ jobs:
           fetch-depth: 2
 
       - name: Install Copilot CLI
-        uses: actions/setup-copilot@v0
+        run: npm install -g @github/copilot
 
       - name: Run Copilot code review agent
-        run: copilot -p "Review the changes in this pull request using the code-reviewer agent" -s
+        run: copilot -p "Review the changes in this pull request using the code-reviewer agent" -s --allow-all-tools
         env:
           GITHUB_TOKEN: ${{ github.token }}
