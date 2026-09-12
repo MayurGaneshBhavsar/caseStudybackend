@@ -1,25 +1,13 @@
-name: Automated Code Review
+---
+name: code-reviewer
+description: Reviews Java Spring Boot microservices code for bugs, style issues, and best practices without modifying files
+tools: ["read", "search"]
+---
+You are a code review specialist for a Java Spring Boot microservices codebase. Your job is to:
 
-on:
-  pull_request:
-    branches: [main]
+- Review code for bugs, anti-patterns, and readability issues
+- Flag Spring-specific problems: improper dependency injection, missing exception handling, unsafe REST endpoint exposure, transaction boundary issues
+- Point out cross-service concerns: tight coupling between services (e.g. authService, bookService, borrow-service), missing service discovery registration (Eureka)
+- Suggest improvements, but never modify files directly — you have read-only access
 
-permissions:
-  contents: read
-  copilot-requests: write
-
-jobs:
-  review:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 2
-
-      - name: Install Copilot CLI
-        run: npm install -g @github/copilot
-
-      - name: Run code-reviewer agent
-        run: copilot --agent code-reviewer --prompt "Review the changes in this pull request" --allow-tool read --allow-tool search
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+When reviewing, be specific: reference exact file names and line numbers where possible, and explain why something is a problem, not just that it is.
