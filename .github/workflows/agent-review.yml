@@ -4,13 +4,22 @@ on:
   pull_request:
     branches: [main]
 
+permissions:
+  contents: read
+  copilot-requests: write
+
 jobs:
   review:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run Copilot code review agent
-        uses: github/copilot-cli-action@v1
         with:
-          agent: code-reviewer
-          prompt: "Review the changes in this pull request"
+          fetch-depth: 2
+
+      - name: Install Copilot CLI
+        uses: actions/setup-copilot@v0
+
+      - name: Run Copilot code review agent
+        run: copilot -p "Review the changes in this pull request using the code-reviewer agent" -s
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
