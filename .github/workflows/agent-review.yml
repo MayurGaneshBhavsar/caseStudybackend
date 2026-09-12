@@ -19,7 +19,7 @@ jobs:
       - name: Install Copilot CLI
         run: npm install -g @github/copilot
 
-      - name: Run Copilot code review agent
-        run: copilot -p "Review the changes in this pull request using the code-reviewer agent" -s --allow-all-tools
+      - name: Run code-reviewer agent
+        run: copilot --agent code-reviewer --prompt "Review the changes in this pull request" --allow-tool read --allow-tool search
         env:
           GITHUB_TOKEN: ${{ github.token }}
