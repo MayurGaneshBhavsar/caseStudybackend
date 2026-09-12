@@ -1,0 +1,16 @@
+name: Automated Code Review
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Copilot code review agent
+        uses: github/copilot-cli-action@v1
+        with:
+          agent: code-reviewer
+          prompt: "Review the changes in this pull request"
