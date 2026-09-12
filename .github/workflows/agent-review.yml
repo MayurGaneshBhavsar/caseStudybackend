@@ -1,0 +1,25 @@
+name: Automated Code Review
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  copilot-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install Copilot CLI
+        run: npm install -g @github/copilot
+
+      - name: Run code-reviewer agent
+        run: copilot --agent code-reviewer --prompt "Review the changes in this pull request" --allow-tool read --allow-tool search
+        env:
+          GITHUB_TOKEN: ${{ github.token }}

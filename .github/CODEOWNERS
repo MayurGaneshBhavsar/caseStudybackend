@@ -1,0 +1,7 @@
+# Default owner for everything
+*       @MayurGaneshBhavsar
+
+# Service-specific ownership
+/authService/       @MayurGaneshBhavsar
+/bookService/        @MayurGaneshBhavsar
+/borrow-service/     @MayurGaneshBhavsar
